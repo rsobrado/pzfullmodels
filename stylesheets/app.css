@@ -1,2 +1,37 @@
-.myth{margin:0 20px 20px 0; border: solid 5px black;}
 
+.box {
+  width: 270px;
+  margin: 0px 0px 20px 20px;
+
+  -webkit-transition: all 0.5s ease-in-out;
+  	 -moz-transition: all 0.5s ease-in-out;
+  	 	 -o-transition: all 0.5s ease-in-out;
+  				transition: all 0.5s ease-in-out;
+
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.60;
+
+}
+.box img{
+  padding: 0;
+  border: solid 3px white;
+  padding: 0;
+  -webkit-border-radius: 3px;
+  	 -moz-border-radius: 3px;
+  		 -o-border-radius: 3px;
+  				border-radius: 3px;
+
+	
+	 -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+	 		-moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+	 				 box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+}
+.box:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+	 -webkit-box-shadow: 0px 0px 5px rgba(5,50,100,0.8);
+	 		-moz-box-shadow: 0px 0px 5px rgba(5,50,100,0.8);
+	 				 box-shadow: 0px 0px 5px rgba(20,200,100,0.8);
+
+
+}

@@ -7,6 +7,7 @@
   $(document).ready(function() {
 
     flickr_photoset('c3cadcbf024df6f25639c5e6f94484a9','72157630196621864');
+    load_masonry();
 
     
 
@@ -39,10 +40,24 @@
 
         $.each(data.photoset.photo, function(i,photo){ 
 
-          var images = '<div class="four mobile-two columns "><a href="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg" rel="lightbox[roadtrip]">';
-          images += '<img class="myth" src="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg"/>';
+          var images = '<div class="box">';
+          images +='<a href="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg" rel="lightbox[roadtrip]">';
+          images += '<img src="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg"/>';
           images += '</a> </div>';
-          $('#sets').append(images);   
+          $('#sets').append(images);  
+
+          $('#sets').masonry({
+            columnWidth: 300,
+            itemSelector: '.box', 
+            isAnimated: true,
+            animationOptions: {
+              duration: 400,
+              queue: false  
+            }  
+        }).imagesLoaded(function() {
+            $('#sets').masonry('reload');
+            });  
+
         }); 
       }     
     });
