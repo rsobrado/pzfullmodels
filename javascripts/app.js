@@ -7,7 +7,9 @@
   $(document).ready(function() {
 
     flickr_photoset('c3cadcbf024df6f25639c5e6f94484a9','72157630196621864');
-    load_masonry();
+
+
+    
 
     
 
@@ -29,6 +31,9 @@
   }
 
   function flickr_photoset(USER_ID,PS_ID) {
+
+
+
     $.ajax({ 
 
       type:"application/javascript",
@@ -40,10 +45,8 @@
 
         $.each(data.photoset.photo, function(i,photo){ 
 
-          var images = '<div class="box">';
-          images +='<a href="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg" rel="lightbox[roadtrip]">';
-          images += '<img src="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'.jpg"/>';
-          images += '</a> </div>';
+          var images ='<img src="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_m.jpg" class="box myphotos" rel="'+PS_ID+'" data-glisse-big="http://farm5.static.flickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_b.jpg" title="'+photo.title+'" />';
+
           $('#sets').append(images);  
 
           $('#sets').masonry({
@@ -56,9 +59,15 @@
             }  
         }).imagesLoaded(function() {
             $('#sets').masonry('reload');
-            });  
+            });
+      });
 
-        }); 
+
+      
+      $(function () {
+          $('.myphotos').glisse({speed: 500, changeSpeed: 550, effect:'fade', fullscreen: false}); 
+      }); 
+
       }     
     });
   }
