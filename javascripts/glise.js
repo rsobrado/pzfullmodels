@@ -113,7 +113,8 @@
             plugin.els['wrapper']       = $(document.createElement('div')).attr('id','glisse-wrapper');
             plugin.els['overlay']       = $(document.createElement('div')).attr('id','glisse-overlay').css(cssProp, cssVal);
             plugin.els['spinner']       = $(document.createElement('div')).attr('id','glisse-spinner');
-            plugin.els['close']         = $(document.createElement('span')).attr('id','glisse-close').css(cssProp, cssVal);
+            plugin.els['close']         = $(document.createElement('span')).attr('id','glisse-close').css(cssProp, cssVal)
+                                            .append( $(document.createElement('span')).html('x'));
             plugin.els['content']       = $(document.createElement('div')).attr('id','glisse-overlay-content').css(cssProp, cssVal)
                                             .css(getPrefix('transform')+'transform', 'scale(0)');
             plugin.els['controls']      = $(document.createElement('div')).attr('id','glisse-controls').css(cssProp, cssVal);
@@ -175,6 +176,7 @@
             plugin.els['overlay'].css({opacity: 0});
             plugin.els['close'].css({opacity: 0});
             plugin.els['controls'].css({opacity: 0});
+
             
             // remove lightbox from dom
             setTimeout(function(){

@@ -10,7 +10,8 @@ html{height:100%}
     bottom:0;
     left:0;
     right:0;
-    background-color:rgba(30,0,60,.85);
+    background: url(../images/pattern.png);
+  background-color: rgba(0,0,0,0.8);
 }
     #glisse-overlay.loading #glisse-spinner {opacity:1;} /* Display spinner */
     
@@ -18,7 +19,7 @@ html{height:100%}
 /* Glisse: Overlay content */
 #glisse-overlay-content {
     position: fixed;
-    top: 2%;
+    top: 1%;
     right: 5%;
     bottom: 5%;
     left: 5%;
@@ -33,7 +34,9 @@ html{height:100%}
     backface-visibility:        hidden;
 }
     /* Hide images */
-    #glisse-overlay-content img{display:none;}
+    #glisse-overlay-content img{
+      display:none;
+    }
 
     /* Shake effect */
     #glisse-overlay-content.shake {
@@ -61,7 +64,20 @@ html{height:100%}
 
 /* Glisse: Controls bar */
 /* Wrapper */
-#glisse-controls {}
+#glisse-controls { 
+  background: red;
+  overflow: hidden;
+
+  font-size: 32px;
+  font-weight: bold;
+  color:white;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6), 1px 1px 5px rgba(255, 255, 255, 0.5);
+        -webkit-transition:all 800ms ease;
+        -moz-transition:all 800ms ease;
+        -o-transition:all 800ms ease;
+        -ms-transition:all 800ms ease;
+        transition:all 800ms ease;
+}
     
     /* Prev/Next button */
     .glisse-next a, .glisse-prev a{
@@ -74,7 +90,8 @@ html{height:100%}
         -moz-user-select:none;
         user-select:none;
     }
-    #glisse-controls .ended a {opacity:.3;cursor:default;} /* disabled effect */
+    #glisse-controls .ended a {opacity:.4;cursor:pointer;} /* disabled effect */
+    #glisse-controls .ended a:hover  {opacity:.7;cursor:pointer;} /* disabled effect */
 
 /* Glisse: Keyframes */
 @-webkit-keyframes shake {
@@ -108,22 +125,50 @@ html{height:100%}
 }
 
 
+.myimg{
 
+    border: solid 5px white;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+         -o-border-radius: 10px;
+            border-radius: 10px;
+
+    
+     -webkit-box-shadow: 0px 0px 25px rgba(0,0,0,0.8);
+        -moz-box-shadow: 0px 0px 25px rgba(0,0,0,0.8);
+             box-shadow: 0px 0px 25px rgba(0,0,0,0.8);
+}
 
 .photos{cursor:pointer;}
 
 /* Glisse: Overlay */
 
 #glisse-close {
+  font-size: 32px;
+  font-weight: bold;
+  color:white;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.6), 1px 1px 5px rgba(255, 255, 255, 0.5);
+
   height: 40px;
   width: 40px;
   text-align: center;
   position: fixed;
   top:40px;
   right:40px;
-  background:red;}
+  background: rgb(255,15,145);
 
 
+  -webkit-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+     -moz-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+          box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+
+
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+         -o-border-radius: 20px;
+            border-radius: 20px;
+
+}
 
 /* Prev/Next button */
 .glisse-next a, .glisse-prev a {
@@ -131,24 +176,36 @@ html{height:100%}
   height: 40px;
   display: block;
   position: fixed;
-  bottom: 10px;
-  background:green}
+  bottom: 5px;
+  background: rgb(200,15,145);
+  color: white;
+  padding: 0 0 0 10px;
+
+
+  -webkit-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+     -moz-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+          box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
+
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+         -o-border-radius: 20px;
+            border-radius: 20px;
+}
 
 .glisse-next a {
-  left: 50%;
-  margin-left: 20px; }
+  left: 58%;
+  margin-left: 50px; 
+  margin-top: 10px; }
 
 .glisse-prev a {
-  left: 50%;
-  margin-left: -40px; }
+  left: 45%;
+  margin-left: -50px; 
+  margin-top: 10px; }
 
 /* Legend */
 .glisse-legend {
   position:fixed;
   display:block;
-  bottom:5%;
+  bottom:10px;
   left:45%;
-  font-size: 24px;
-  font-weight: bold;
-  color:white;
 }
