@@ -42,3 +42,21 @@
 .contain-to-grid{
 	z-index: 200;
 }
+
+@media all and (max-width: 768px) and (min-width: 480px) {
+  .gallery{
+  	height: 150px;
+  	&:hover{
+  		height: 555px;
+  	}
+  }
+}
+
+@media all and (max-width: 480px) {
+  .gallery{
+  	height: 100px;
+  	&:hover{
+  		height: 300px;
+  	}
+  }
+}
