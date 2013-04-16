@@ -49,14 +49,20 @@
   	&:hover{
   		height: 555px;
   	}
+  	h1{
+  		font-size: 160%;
+	}
   }
 }
 
 @media all and (max-width: 480px) {
   .gallery{
-  	height: 100px;
+  	height: 180px;
   	&:hover{
   		height: 300px;
   	}
+  	h1{
+  		font-size: 120%;
+	}
   }
 }
