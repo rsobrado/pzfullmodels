@@ -1,19 +1,72 @@
-/* line 13, ../sass/roger.scss */
+/* line 1, ../sass/roger.scss */
+body {
+  background: url(../img/bg.jpg) !important;
+  padding-top: 80px !important;
+}
+
+/* line 23, ../sass/roger.scss */
+.box {
+  width: 270px;
+  margin: 5px 0px 20px 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.60;
+}
+
+/* line 41, ../sass/roger.scss */
+#sets {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 50px;
+  overflow: hidden;
+  display: block;
+  -webkit-box-shadow: inset 0 0 60px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 0 60px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* line 50, ../sass/roger.scss */
+#sets img {
+  padding: 0;
+  border: solid 3px white;
+  padding: 0;
+  -webkit-box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px black;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 59, ../sass/roger.scss */
+#sets img:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* line 65, ../sass/roger.scss */
+.contain-to-grid {
+  background: rgba(150, 20, 70, 0.95) !important;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+/* line 69, ../sass/roger.scss */
 .gallery {
   display: block;
   height: 250px;
   overflow: hidden;
   transition: all 0.6s ease-out;
   border: solid 4px rgba(255, 255, 255, 0.8);
-  opacity: 0.45;
+  opacity: 0.65;
   -webkit-transition: all 0.6s ease-out;
   -moz-transition: all 0.6s ease-out;
   -o-transition: all 0.6s ease-out;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   border-radius: 15px 15px 0 0;
 }
-/* line 22, ../sass/roger.scss */
+/* line 78, ../sass/roger.scss */
 .gallery:hover {
   -webkit-box-shadow: 0 1px 8px rgba(180, 0, 50, 0.45);
   box-shadow: 0 1px 8px rgba(180, 0, 50, 0.45);
@@ -22,7 +75,7 @@
   border-radius: 20px;
   opacity: 1;
 }
-/* line 30, ../sass/roger.scss */
+/* line 86, ../sass/roger.scss */
 .gallery h1 {
   background: rgba(150, 20, 70, 0.7);
   color: white;
@@ -33,40 +86,62 @@
   -webkit-box-shadow: inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3), 5px 5px 0px 0px rgba(50, 0, 25, 0.3), 10px 10px 0px 0px rgba(255, 205, 205, 0.3);
   box-shadow: inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3), 5px 5px 0px 0px rgba(50, 0, 25, 0.3), 10px 10px 0px 0px rgba(255, 205, 205, 0.3);
 }
-/* line 39, ../sass/roger.scss */
+/* line 95, ../sass/roger.scss */
 .gallery img {
   z-index: -1;
+  display: block;
 }
 
-/* line 42, ../sass/roger.scss */
-.contain-to-grid {
-  z-index: 200;
+/* line 98, ../sass/roger.scss */
+.my-nav {
+  color: white;
+  padding: 10px 0 0 0;
+  -webkit-box-shadow: 1px 0 8px rgba(0, 0, 0, 0.45);
+  box-shadow: 1px 0 8px rgba(0, 0, 0, 0.45);
+}
+/* line 102, ../sass/roger.scss */
+.my-nav ul li {
+  list-style-type: none;
+  float: left;
+  padding: 0 10px;
 }
 
-@media all and (max-width: 768px) and (min-width: 480px) {
-  /* line 47, ../sass/roger.scss */
+/* line 104, ../sass/roger.scss */
+.left, .right {
+  margin: 0 !important;
+}
+
+@media all and (max-width: 940px) and (min-width: 480px) {
+  /* line 108, ../sass/roger.scss */
+  body {
+    background: url(../img/bg.jpg) !important;
+  }
+
+  /* line 111, ../sass/roger.scss */
   .gallery {
-    height: 150px;
+    border-radius: 10px;
+    height: auto;
   }
-  /* line 49, ../sass/roger.scss */
+  /* line 114, ../sass/roger.scss */
   .gallery:hover {
-    height: 555px;
+    height: auto;
   }
-  /* line 52, ../sass/roger.scss */
+  /* line 117, ../sass/roger.scss */
   .gallery h1 {
     font-size: 160%;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 59, ../sass/roger.scss */
+  /* line 124, ../sass/roger.scss */
   .gallery {
-    height: 180px;
+    border-radius: 10px;
+    height: auto;
   }
-  /* line 61, ../sass/roger.scss */
+  /* line 127, ../sass/roger.scss */
   .gallery:hover {
-    height: 300px;
+    height: auto;
   }
-  /* line 64, ../sass/roger.scss */
+  /* line 130, ../sass/roger.scss */
   .gallery h1 {
     font-size: 120%;
   }

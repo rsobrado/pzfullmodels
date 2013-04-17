@@ -1,3 +1,13 @@
+body{
+	background: url(../img/bg.jpg) !important;
+	padding-top: 80px !important;
+
+}
+@mixin rounded_boder($size) {
+  -webkit-border-radius: $size;
+					border-radius: $size;
+}
+
 @mixin shadow($shadow...){
 	-webkit-box-shadow: $shadow;
 					box-shadow: $shadow;
@@ -10,15 +20,61 @@
 }
 
 
+.box {
+  width: 270px;
+  margin: 5px 0px 20px 20px;
+
+  cursor: pointer;
+
+  -webkit-transition: all 0.4s ease-in-out;
+  	 -moz-transition: all 0.4s ease-in-out;
+  	 	 -o-transition: all 0.4s ease-in-out;
+  				transition: all 0.4s ease-in-out;
+
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.60;
+
+}
+
+
+
+#sets{
+	//display: none;
+	background: rgba(0,0,0,0.8);
+	padding:50px;
+	overflow:hidden;
+	display: block;
+	@include shadow(inset 0 0 60px 20px rgba(0, 0, 0, 0.6));
+}
+
+#sets img{
+  padding: 0;
+  border: solid 3px white;
+  padding: 0;
+  
+	@include shadow(0 0 15px rgba(0, 0, 0, 1));
+	@include rounded_boder(3px);
+
+}
+#sets img:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+
+}
+
+.contain-to-grid{
+		background: rgba(150, 20, 70, 0.95) !important;
+	@include shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
 .gallery{
     display: block;
 	height: 250px;
 	overflow: hidden;
 	transition: all 0.6s ease-out;
 	border: solid 4px rgba(255,255,255,0.8);
-	opacity: 0.45;
+	opacity: 0.65;
 	@include transition(all 0.6s ease-out);
-	@include shadow(0 1px 4px rgba(0, 0, 0, 0.3));
+	@include shadow(0 0 4px rgba(0, 0, 0, 0.3));
 	&:hover{
 		@include shadow(0 1px 8px rgba(180, 0, 50, 0.45));
 		height: 750px;
@@ -36,18 +92,27 @@
 		margin-top: 20px;
 		@include shadow(inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3),5px 5px 0px 0px rgba(50, 0, 25, 0.3),10px 10px 0px 0px rgba(255, 205, 205, 0.3));
 	}
-		img{z-index: -1}
+		img{z-index: -1;display: block;}
 }
 
-.contain-to-grid{
-	z-index: 200;
+.my-nav{
+	color:white;
+	padding: 10px 0 0 0;
+	@include shadow(1px 0 8px rgba(0, 0, 0, 0.45));
+	ul li {list-style-type: none; float:left; padding:0 10px;}
 }
+.left,.right{margin: 0 !important;}
 
-@media all and (max-width: 768px) and (min-width: 480px) {
+
+@media all and (max-width: 940px) and (min-width: 480px) {
+	body{
+		background: url(../img/bg.jpg) !important;
+	}
   .gallery{
-  	height: 150px;
+  	border-radius: 10px;
+  	height: auto;
   	&:hover{
-  		height: 555px;
+  		height: auto;
   	}
   	h1{
   		font-size: 160%;
@@ -57,12 +122,13 @@
 
 @media all and (max-width: 480px) {
   .gallery{
-  	height: 180px;
+		border-radius: 10px;
+  	height: auto;
   	&:hover{
-  		height: 300px;
+  		height: auto;
   	}
   	h1{
   		font-size: 120%;
+		}
 	}
-  }
 }
