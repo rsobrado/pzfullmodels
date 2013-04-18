@@ -4,22 +4,15 @@
   var $doc = $(document),
   Modernizr = window.Modernizr;
 
+  var $flickrAPI_Key = 'c3cadcbf024df6f25639c5e6f94484a9';
+  var $flickr_ID = '29587567%40N06';
+
   $(document).ready(function() {
 
-    flickr_photoset('c3cadcbf024df6f25639c5e6f94484a9','72157630196621864');
+   // flickr_photoset( $flickr_ID ,'72157630196621864');
 
-
-    
-
-    
-
+    getGalleries($flickrAPI_Key,$flickr_ID);
   });
-
-  // UNCOMMENT THE LINE YOU WANT BELOW IF YOU WANT IE8 SUPPORT AND ARE USING .block-grids
-  // $('.block-grid.two-up>li:nth-child(2n+1)').css({clear: 'both'});
-  // $('.block-grid.three-up>li:nth-child(3n+1)').css({clear: 'both'});
-  // $('.block-grid.four-up>li:nth-child(4n+1)').css({clear: 'both'});
-  // $('.block-grid.five-up>li:nth-child(5n+1)').css({clear: 'both'});
 
   // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
   if (Modernizr.touch && !window.location.hash) {
@@ -30,14 +23,41 @@
     });
   }
 
-  function flickr_photoset(USER_ID,PS_ID) {
+  function getGalleries(API_KEY,USER_ID) {
+
+    $.ajax({ 
+      
+
+      type:"application/javascript",
+      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key='+API_KEY+'&user_id='+USER_ID+'&format=json',
+      dataType: 'jsonp',
+      jsonpCallback: 'jsonFlickrApi',
+      success: function(data) {
+        gallery_st = true; //to avoid reload info
+        console.log(data);
 
 
+        $.each(data.photosets.photoset, function(i,photoset){ 
+
+          var gallery ='<li> <div class="gallery"><h1>'+photoset.title._content+'</h1></div></li>';
+          $('#collections').append(gallery);
+
+          
+      });
+
+      }     
+    });
+  }
+
+  
+
+
+  function flickr_photoset(API_KEY,PS_ID) {
 
     $.ajax({ 
 
       type:"application/javascript",
-      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+USER_ID+'&photoset_id='+PS_ID+'&format=json',
+      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+API_KEY+'&photoset_id='+PS_ID+'&format=json',
       dataType: 'jsonp',
       jsonpCallback: 'jsonFlickrApi',
       success: function(data) {
@@ -62,11 +82,7 @@
             });
       });
 
-
-      
-      $(function () {
-          $('.myphotos').glisse({speed: 500, changeSpeed: 550, effect:'fade', fullscreen: false}); 
-      }); 
+      $(function () {$('.myphotos').glisse({speed: 500, changeSpeed: 550, effect:'fade', fullscreen: true});}); 
 
       }     
     });
