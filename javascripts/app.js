@@ -16,8 +16,8 @@ var photosetsIds = new Array();
       var myVar=setInterval(function(){
         flickr_photoset(flickrAPI_Key, photosetsIds[index]);
         index += 1;
-      },500);
-    },1000);
+      },700);
+    },1200);
   });
 
   // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
@@ -58,7 +58,7 @@ var photosetsIds = new Array();
     $.ajax({ 
 
       type:"application/javascript",
-      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+API_KEY+'&photoset_id='+PS_ID+'&format=json&per_page=3',
+      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+API_KEY+'&photoset_id='+PS_ID+'&format=json&per_page=9',
       dataType: 'jsonp',
       jsonpCallback: 'jsonFlickrApi',
       success: function(data) {

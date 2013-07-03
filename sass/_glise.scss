@@ -11,7 +11,11 @@ html{height:100%}
     left:0;
     right:0;
     background: url(../img/pattern.png);
-  background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.8);
+    cursor: pointer;
+  &:hover{
+  }
+    /* style */
 }
     #glisse-overlay.loading #glisse-spinner {opacity:1;} /* Display spinner */
     
@@ -48,7 +52,7 @@ html{height:100%}
     }
 
 /* Glisse: Close button */
-#glisse-close { cursor:pointer; }
+#glisse-close { cursor:pointer;}
 
 /* Glisse: Spinner */
 #glisse-spinner {
@@ -65,7 +69,6 @@ html{height:100%}
 /* Glisse: Controls bar */
 /* Wrapper */
 #glisse-controls { 
-  background: red;
   overflow: hidden;
 
   font-size: 32px;
@@ -140,8 +143,9 @@ html{height:100%}
   width: 40px;
   text-align: center;
   position: fixed;
-  top:40px;
-  right:40px;
+  top:20px;
+  right:20px;
+  z-index: 999;
   background: rgb(255,15,145);
 
 
