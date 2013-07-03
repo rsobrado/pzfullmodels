@@ -2,7 +2,6 @@
 var photosetsIds = new Array();
 (function ($, window, undefined) {
 
-
   var gallery_st;
   var $doc = $(document),
   Modernizr = window.Modernizr;
