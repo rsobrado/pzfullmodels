@@ -5,20 +5,33 @@ body {
   padding-top: 80px !important;
 }
 
-/* line 23, ../sass/roger.scss */
+/* line 35, ../sass/roger.scss */
 .box {
   width: 270px;
   margin: 5px 0px 20px 20px;
   cursor: pointer;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.60;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 5px solid white;
 }
 
-/* line 41, ../sass/roger.scss */
+/* line 55, ../sass/roger.scss */
+.fixed {
+  z-index: 0 !important;
+}
+
+/* line 60, ../sass/roger.scss */
 #sets {
   background: rgba(0, 0, 0, 0.8);
   padding: 50px;
@@ -28,7 +41,7 @@ body {
   box-shadow: inset 0 0 60px 20px rgba(0, 0, 0, 0.6);
 }
 
-/* line 50, ../sass/roger.scss */
+/* line 69, ../sass/roger.scss */
 #sets img {
   padding: 0;
   border: solid 3px white;
@@ -39,44 +52,39 @@ body {
   border-radius: 3px;
 }
 
-/* line 59, ../sass/roger.scss */
+/* line 78, ../sass/roger.scss */
 #sets img:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
 
-/* line 65, ../sass/roger.scss */
+/* line 84, ../sass/roger.scss */
 .contain-to-grid {
   background: rgba(150, 20, 70, 0.95) !important;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
 }
 
-/* line 69, ../sass/roger.scss */
+/* line 88, ../sass/roger.scss */
 .gallery {
   display: block;
-  height: 250px;
+  padding: 120px 40px 0;
   overflow: hidden;
   transition: all 0.6s ease-out;
   border: solid 4px rgba(255, 255, 255, 0.8);
-  opacity: 0.65;
+  border-radius: 15px;
+  background: rgba(255, 10, 100, 0.5);
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 0.6s ease-out;
   -moz-transition: all 0.6s ease-out;
   -o-transition: all 0.6s ease-out;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-  border-radius: 15px 15px 0 0;
 }
-/* line 78, ../sass/roger.scss */
-.gallery:hover {
-  -webkit-box-shadow: 0 1px 8px rgba(180, 0, 50, 0.45);
-  box-shadow: 0 1px 8px rgba(180, 0, 50, 0.45);
-  height: 750px;
-  cursor: pointer;
-  border-radius: 20px;
-  opacity: 1;
-}
-/* line 86, ../sass/roger.scss */
+/* line 102, ../sass/roger.scss */
 .gallery h1 {
   background: rgba(150, 20, 70, 0.7);
   color: white;
@@ -84,64 +92,74 @@ body {
   padding: 10px 5%;
   position: absolute;
   margin-top: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
   -webkit-box-shadow: inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3), 5px 5px 0px 0px rgba(50, 0, 25, 0.3), 10px 10px 0px 0px rgba(255, 205, 205, 0.3);
   box-shadow: inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3), 5px 5px 0px 0px rgba(50, 0, 25, 0.3), 10px 10px 0px 0px rgba(255, 205, 205, 0.3);
 }
-/* line 95, ../sass/roger.scss */
+/* line 114, ../sass/roger.scss */
 .gallery img {
   display: block;
 }
+/* line 116, ../sass/roger.scss */
+.gallery img:hover {
+  cursor: pointer;
+  opacity: 1;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
 
-/* line 98, ../sass/roger.scss */
+/* line 124, ../sass/roger.scss */
 .my-nav {
   color: white;
   padding: 10px 0 0 0;
   -webkit-box-shadow: 1px 0 8px rgba(0, 0, 0, 0.45);
   box-shadow: 1px 0 8px rgba(0, 0, 0, 0.45);
 }
-/* line 102, ../sass/roger.scss */
+/* line 128, ../sass/roger.scss */
 .my-nav ul li {
   list-style-type: none;
   float: left;
   padding: 0 10px;
 }
 
-/* line 104, ../sass/roger.scss */
+/* line 130, ../sass/roger.scss */
 .left, .right {
   margin: 0 !important;
 }
 
 @media all and (max-width: 940px) and (min-width: 480px) {
-  /* line 108, ../sass/roger.scss */
+  /* line 134, ../sass/roger.scss */
   body {
     background: url(../img/bg.jpg) !important;
   }
 
-  /* line 111, ../sass/roger.scss */
+  /* line 137, ../sass/roger.scss */
   .gallery {
     border-radius: 10px;
     height: auto;
   }
-  /* line 114, ../sass/roger.scss */
+  /* line 140, ../sass/roger.scss */
   .gallery:hover {
     height: auto;
   }
-  /* line 117, ../sass/roger.scss */
+  /* line 143, ../sass/roger.scss */
   .gallery h1 {
     font-size: 160%;
   }
 }
 @media all and (max-width: 480px) {
-  /* line 124, ../sass/roger.scss */
+  /* line 150, ../sass/roger.scss */
   .gallery {
     border-radius: 10px;
     height: auto;
   }
-  /* line 127, ../sass/roger.scss */
+  /* line 153, ../sass/roger.scss */
   .gallery:hover {
     height: auto;
   }
-  /* line 130, ../sass/roger.scss */
+  /* line 156, ../sass/roger.scss */
   .gallery h1 {
     font-size: 120%;
   }
@@ -167,9 +185,11 @@ html {
   right: 0;
   background: url(../img/pattern.png);
   background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  /* style */
 }
 
-/* line 16, ../sass/_glise.scss */
+/* line 20, ../sass/_glise.scss */
 #glisse-overlay.loading #glisse-spinner {
   opacity: 1;
 }
@@ -177,7 +197,7 @@ html {
 /* Display spinner */
 /* Glisse: Overlay content */
 /* Glisse: Overlay content */
-/* line 20, ../sass/_glise.scss */
+/* line 24, ../sass/_glise.scss */
 #glisse-overlay-content {
   position: fixed;
   top: 1%;
@@ -196,13 +216,13 @@ html {
 }
 
 /* Hide images */
-/* line 37, ../sass/_glise.scss */
+/* line 41, ../sass/_glise.scss */
 #glisse-overlay-content img {
   display: none;
 }
 
 /* Shake effect */
-/* line 42, ../sass/_glise.scss */
+/* line 46, ../sass/_glise.scss */
 #glisse-overlay-content.shake {
   -webkit-animation: shake 600ms 1;
   -moz-animation: shake 600ms 1;
@@ -212,13 +232,13 @@ html {
 }
 
 /* Glisse: Close button */
-/* line 51, ../sass/_glise.scss */
+/* line 55, ../sass/_glise.scss */
 #glisse-close {
   cursor: pointer;
 }
 
 /* Glisse: Spinner */
-/* line 54, ../sass/_glise.scss */
+/* line 58, ../sass/_glise.scss */
 #glisse-spinner {
   position: fixed;
   top: 50%;
@@ -232,9 +252,8 @@ html {
 
 /* Glisse: Controls bar */
 /* Wrapper */
-/* line 67, ../sass/_glise.scss */
+/* line 71, ../sass/_glise.scss */
 #glisse-controls {
-  background: red;
   overflow: hidden;
   font-size: 32px;
   font-weight: bold;
@@ -248,7 +267,7 @@ html {
 }
 
 /* Prev/Next button */
-/* line 83, ../sass/_glise.scss */
+/* line 86, ../sass/_glise.scss */
 .glisse-next a, .glisse-prev a {
   -webkit-transition: all 100ms ease;
   -moz-transition: all 100ms ease;
@@ -260,14 +279,14 @@ html {
   user-select: none;
 }
 
-/* line 93, ../sass/_glise.scss */
+/* line 96, ../sass/_glise.scss */
 #glisse-controls .ended a {
   opacity: .4;
   cursor: pointer;
 }
 
 /* disabled effect */
-/* line 94, ../sass/_glise.scss */
+/* line 97, ../sass/_glise.scss */
 #glisse-controls .ended a:hover {
   opacity: .7;
   cursor: pointer;
@@ -276,97 +295,97 @@ html {
 /* disabled effect */
 /* Glisse: Keyframes */
 @-webkit-keyframes shake {
-  /* line 98, ../sass/_glise.scss */
+  /* line 101, ../sass/_glise.scss */
   0%, 100% {
     -webkit-transform: translateX(0);
   }
 
-  /* line 99, ../sass/_glise.scss */
+  /* line 102, ../sass/_glise.scss */
   10%, 30%, 50%, 70%, 90% {
     -webkit-transform: translateX(-10px);
   }
 
-  /* line 100, ../sass/_glise.scss */
+  /* line 103, ../sass/_glise.scss */
   20%, 40%, 60%, 80% {
     -webkit-transform: translateX(10px);
   }
 }
 
 @-moz-keyframes shake {
-  /* line 104, ../sass/_glise.scss */
+  /* line 107, ../sass/_glise.scss */
   0%, 100% {
     -moz-transform: translateX(0);
   }
 
-  /* line 105, ../sass/_glise.scss */
+  /* line 108, ../sass/_glise.scss */
   10%, 30%, 50%, 70%, 90% {
     -moz-transform: translateX(-10px);
   }
 
-  /* line 106, ../sass/_glise.scss */
+  /* line 109, ../sass/_glise.scss */
   20%, 40%, 60%, 80% {
     -moz-transform: translateX(10px);
   }
 }
 
 @-ms-keyframes shake {
-  /* line 110, ../sass/_glise.scss */
+  /* line 113, ../sass/_glise.scss */
   0%, 100% {
     -ms-transform: translateX(0);
   }
 
-  /* line 111, ../sass/_glise.scss */
+  /* line 114, ../sass/_glise.scss */
   10%, 30%, 50%, 70%, 90% {
     -ms-transform: translateX(-10px);
   }
 
-  /* line 112, ../sass/_glise.scss */
+  /* line 115, ../sass/_glise.scss */
   20%, 40%, 60%, 80% {
     -ms-transform: translateX(10px);
   }
 }
 
 @-o-keyframes shake {
-  /* line 116, ../sass/_glise.scss */
+  /* line 119, ../sass/_glise.scss */
   0%, 100% {
     -o-transform: translateX(0);
   }
 
-  /* line 117, ../sass/_glise.scss */
+  /* line 120, ../sass/_glise.scss */
   10%, 30%, 50%, 70%, 90% {
     -o-transform: translateX(-10px);
   }
 
-  /* line 118, ../sass/_glise.scss */
+  /* line 121, ../sass/_glise.scss */
   20%, 40%, 60%, 80% {
     -o-transform: translateX(10px);
   }
 }
 
 @keyframes shake {
-  /* line 122, ../sass/_glise.scss */
+  /* line 125, ../sass/_glise.scss */
   0%, 100% {
     transform: translateX(0);
   }
 
-  /* line 123, ../sass/_glise.scss */
+  /* line 126, ../sass/_glise.scss */
   10%, 30%, 50%, 70%, 90% {
     transform: translateX(-10px);
   }
 
-  /* line 124, ../sass/_glise.scss */
+  /* line 127, ../sass/_glise.scss */
   20%, 40%, 60%, 80% {
     transform: translateX(10px);
   }
 }
 
-/* line 129, ../sass/_glise.scss */
+/* line 132, ../sass/_glise.scss */
 .photos {
   cursor: pointer;
 }
 
 /* Glisse: Overlay */
-/* line 133, ../sass/_glise.scss */
+/* line 136, ../sass/_glise.scss */
 #glisse-close {
   font-size: 32px;
   font-weight: bold;
@@ -376,8 +395,9 @@ html {
   width: 40px;
   text-align: center;
   position: fixed;
-  top: 40px;
-  right: 40px;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
   background: #ff0f91;
   -webkit-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
   -moz-box-shadow: -2px -2px 1px rgba(0, 0, 0, 0.8);
@@ -389,7 +409,7 @@ html {
 }
 
 /* Prev/Next button */
-/* line 161, ../sass/_glise.scss */
+/* line 165, ../sass/_glise.scss */
 .glisse-next a, .glisse-prev a {
   width: 40px;
   height: 40px;
@@ -408,14 +428,14 @@ html {
   border-radius: 20px;
 }
 
-/* line 182, ../sass/_glise.scss */
+/* line 186, ../sass/_glise.scss */
 .glisse-next a {
   left: 58%;
   margin-left: 50px;
   margin-top: 10px;
 }
 
-/* line 187, ../sass/_glise.scss */
+/* line 191, ../sass/_glise.scss */
 .glisse-prev a {
   left: 45%;
   margin-left: -50px;
@@ -423,7 +443,7 @@ html {
 }
 
 /* Legend */
-/* line 193, ../sass/_glise.scss */
+/* line 197, ../sass/_glise.scss */
 .glisse-legend {
   position: fixed;
   display: block;

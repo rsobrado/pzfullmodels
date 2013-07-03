@@ -1,10 +1,18 @@
 
 var photosetsIds = new Array();
 (function ($, window, undefined) {
+<<<<<<< HEAD
 
   var gallery_st;
   var $doc = $(document),
   Modernizr = window.Modernizr;
+=======
+  'use strict';
+  var gallery_st;
+  var $doc = $(document),
+  Modernizr = window.Modernizr;
+
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
   var flickrAPI_Key = 'c3cadcbf024df6f25639c5e6f94484a9';
   var flickr_ID = '29587567%40N06';
 
@@ -15,9 +23,14 @@ var photosetsIds = new Array();
       var myVar=setInterval(function(){
         flickr_photoset(flickrAPI_Key, photosetsIds[index]);
         index += 1;
+<<<<<<< HEAD
       },500);
     },1000);
 
+=======
+      },700);
+    },1200);
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
   });
 
   // Hide address bar on mobile devices (except if #hash present, so we don't mess up deep linking).
@@ -58,9 +71,13 @@ var photosetsIds = new Array();
     $.ajax({ 
 
       type:"application/javascript",
+<<<<<<< HEAD
 
       url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+API_KEY+'&photoset_id='+PS_ID+'&format=json&per_page=3',
 
+=======
+      url: 'http://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key='+API_KEY+'&photoset_id='+PS_ID+'&format=json&per_page=9',
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
       dataType: 'jsonp',
       jsonpCallback: 'jsonFlickrApi',
       success: function(data) {
@@ -81,13 +98,19 @@ var photosetsIds = new Array();
               queue: false  
             }  
         }).imagesLoaded(function() {
+<<<<<<< HEAD
           
+=======
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
             $('#set-'+PS_ID).masonry('reload');
         });
       });
 
       $(function () {$('.myphotos').glisse({speed: 500, changeSpeed: 550, effect:'fade', fullscreen: false});}); 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
 
       }     
     });

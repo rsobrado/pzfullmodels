@@ -8,9 +8,21 @@ body{
 					border-radius: $size;
 }
 
+@mixin boder-box() {
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
 @mixin shadow($shadow...){
 	-webkit-box-shadow: $shadow;
 					box-shadow: $shadow;
+}
+
+@mixin transition($transition...){
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
 }
 
 @mixin transition($transition...){
@@ -26,16 +38,23 @@ body{
 
   cursor: pointer;
 
-  -webkit-transition: all 0.4s ease-in-out;
-  	 -moz-transition: all 0.4s ease-in-out;
-  	 	 -o-transition: all 0.4s ease-in-out;
-  				transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  	 -moz-transition: all 0.3s ease-in-out;
+  	 	 -o-transition: all 0.3s ease-in-out;
+  				transition: all 0.3s ease-in-out;
 
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
   opacity: 0.60;
+  @include rounded_boder(10px);
+	@include shadow(0 0 10px rgba(0, 0, 0, 0.4));
+	@include boder-box();
+	border: 5px solid white;
 
 }
 
+.fixed {
+  z-index: 0 !important;
+}
 
 
 #sets{
@@ -67,22 +86,19 @@ body{
 	@include shadow(0 1px 2px rgba(0, 0, 0, 0.55));
 }
 .gallery{
-    display: block;
-	height: 250px;
+  display: block;
+  padding: 120px 40px 0;
 	overflow: hidden;
 	transition: all 0.6s ease-out;
 	border: solid 4px rgba(255,255,255,0.8);
-	opacity: 0.65;
+	border-radius: 15px;
+	background: rgba(255,10,100,0.5);
+	position: relative;
+	@include boder-box();
+
 	@include transition(all 0.6s ease-out);
 	@include shadow(0 0 4px rgba(0, 0, 0, 0.3));
-	&:hover{
-		@include shadow(0 1px 8px rgba(180, 0, 50, 0.45));
-		height: 750px;
-		cursor: pointer;
-		border-radius: 20px;
-		opacity: 1;
-	}
-	border-radius: 15px 15px 0 0;
+	
 	h1{
 		background: rgba(150, 20, 70, 0.7);
 		color: white;
@@ -90,9 +106,23 @@ body{
 		padding: 10px 5%; 
 		position: absolute;
 		margin-top: 20px;
+		position: absolute;
+		top: 0;
+		left: 0;
 		@include shadow(inset 5px 5px 0px 0px rgba(0, 0, 0, 0.3),5px 5px 0px 0px rgba(50, 0, 25, 0.3),10px 10px 0px 0px rgba(255, 205, 205, 0.3));
 	}
+<<<<<<< HEAD
 		img{display: block;}
+=======
+		img{
+			display: block;
+			&:hover{
+				cursor: pointer;
+				opacity: 1;
+				@include shadow(0 5px 15px rgba(0, 0, 0, 0.7));
+			}
+		}
+>>>>>>> 17704130b62975a568f6ff7e10030e343d9c4508
 }
 
 .my-nav{
