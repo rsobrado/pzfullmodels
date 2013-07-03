@@ -1,0 +1,70 @@
+
+.box {
+  width: 270px;
+  margin: 5px 0px 20px 20px;
+  cursor: pointer;
+
+  -webkit-transition: all 0.4s ease-in-out;
+  	 -moz-transition: all 0.4s ease-in-out;
+  	 	 -o-transition: all 0.4s ease-in-out;
+  				transition: all 0.4s ease-in-out;
+
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.60;
+
+}
+
+.drop-shadow {
+   position:relative;
+}
+
+.drop-shadow:before,
+.drop-shadow:after {
+   content:"";
+   position:absolute;
+   z-index:-1;
+   bottom:15px;
+   left:20px;
+   width:50%;
+   height:20%;
+   -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.3);
+   -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.3);
+   box-shadow:0 15px 10px rgba(0, 0, 0, 0.3);
+   -webkit-transform:rotate(-4deg);
+   -moz-transform:rotate(-4deg);
+   -o-transform:rotate(-4deg);
+   transform:rotate(-4deg);
+}
+
+.drop-shadow:after{
+   right:20px;
+   left:auto;
+   -webkit-transform:rotate(4deg);
+   -moz-transform:rotate(4deg);
+   -o-transform:rotate(4deg);
+   transform:rotate(4deg);
+ }
+
+
+#sets img{
+  padding: 0;
+  border: solid 3px white;
+  padding: 0;
+  -webkit-border-radius: 3px;
+  	 -moz-border-radius: 3px;
+  		 -o-border-radius: 3px;
+  				border-radius: 3px;
+
+	
+	 -webkit-box-shadow: 0px 0px 1px rgb(0,0,0);
+	 		-moz-box-shadow: 0px 0px 1px rgb(0,0,0);
+	 				 box-shadow: 0px 0px 1px rgb(0,0,0);
+}
+#sets img:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+	 -webkit-box-shadow: 0px 0px 5px rgba(5,50,100,0.8);
+	 		-moz-box-shadow: 0px 0px 5px rgba(5,50,100,0.8);
+	 				 box-shadow: 0px 0px 5px rgba(20,200,100,0.8);
+
+}
